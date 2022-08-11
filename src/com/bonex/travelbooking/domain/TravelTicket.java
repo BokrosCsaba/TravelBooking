@@ -70,6 +70,16 @@ public class TravelTicket {
     public void setArrivalTime(LocalDateTime arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
+
+    public void reschedule() {
+        System.out.println("Im rescheduling the ticket");
+    }
+
+    public void cancel() {
+        System.out.println("Im cancelling the ticket");
+    }
+
+
 }
 
 
