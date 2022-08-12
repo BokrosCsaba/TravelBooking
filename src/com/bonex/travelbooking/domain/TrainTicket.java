@@ -1,10 +1,25 @@
 package com.bonex.travelbooking.domain;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 public class TrainTicket extends TravelTicket {
 
     private Integer travelClass;
     private Integer carriageNumber;
     private Integer seatNumber;
+
+
+    public TrainTicket() {};
+
+    public TrainTicket(Long bookingRef, String origin, String destination, BigDecimal price,
+                       LocalDateTime departureTime, LocalDateTime arrivalTime, Integer travelClass,
+                       Integer carriageNumber, Integer seatNumber) {
+        super(bookingRef, origin, destination, price, departureTime, arrivalTime);
+        this.travelClass = travelClass;
+        this.carriageNumber = carriageNumber;
+        this.seatNumber = seatNumber;
+    }
 
     public Integer getTravelClass() {
         return travelClass;
@@ -29,4 +44,17 @@ public class TrainTicket extends TravelTicket {
     public void setSeatNumber(Integer seatNumber) {
         this.seatNumber = seatNumber;
     }
+
+    public void upgrade() {
+        if (travelClass !=1) {
+            travelClass = 1;
+            System.out.println("You have been upgraded to class 1");
+        }
+        else
+            {
+                System.out.println("You are on 1st class already");
+            }
+
+    }
+
 }
