@@ -3,24 +3,23 @@ package com.bonex.travelbooking.domain;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class TrainTicket extends TravelTicket {
+public class PlaneTicket  extends TravelTicket{
 
     private Integer travelClass;
-    private Integer carriageNumber;
     private Integer seatNumber;
+    private Integer stopOvers;
 
-
-    public TrainTicket() {
+    public PlaneTicket () {
         super();
-    };
+    }
 
-    public TrainTicket(Long bookingRef, String origin, String destination, BigDecimal price,
+    public PlaneTicket(Long bookingRef, String origin, String destination, BigDecimal price,
                        LocalDateTime departureTime, LocalDateTime arrivalTime, Integer travelClass,
-                       Integer carriageNumber, Integer seatNumber) {
+                       Integer seatNumber, Integer stopOvers) {
         super(bookingRef, origin, destination, price, departureTime, arrivalTime);
         this.travelClass = travelClass;
-        this.carriageNumber = carriageNumber;
         this.seatNumber = seatNumber;
+        this.stopOvers = stopOvers;
     }
 
     public Integer getTravelClass() {
@@ -31,14 +30,6 @@ public class TrainTicket extends TravelTicket {
         this.travelClass = travelClass;
     }
 
-    public Integer getCarriageNumber() {
-        return carriageNumber;
-    }
-
-    public void setCarriageNumber(Integer carriageNumber) {
-        this.carriageNumber = carriageNumber;
-    }
-
     public Integer getSeatNumber() {
         return seatNumber;
     }
@@ -47,16 +38,11 @@ public class TrainTicket extends TravelTicket {
         this.seatNumber = seatNumber;
     }
 
-    public void upgrade() {
-        if (travelClass !=1) {
-            travelClass = 1;
-            System.out.println("You have been upgraded to class 1");
-        }
-        else
-            {
-                System.out.println("You are on 1st class already");
-            }
-
+    public Integer getStopOvers() {
+        return stopOvers;
     }
 
+    public void setStopOvers(Integer stopOvers) {
+        this.stopOvers = stopOvers;
+    }
 }
