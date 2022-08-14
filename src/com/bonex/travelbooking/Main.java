@@ -1,5 +1,6 @@
 package com.bonex.travelbooking;
 
+import com.bonex.travelbooking.domain.BusTicket;
 import com.bonex.travelbooking.domain.TrainTicket;
 
 import java.math.BigDecimal;
@@ -17,7 +18,15 @@ public class Main {
 
 
         trainTicket2.upgrade();
+        String[] providers = {"1st bus company", "2nd bus company", "3rd bus company"};
 
+        BusTicket busTicket = new BusTicket(123L, "London", "Edinburgh", new BigDecimal("54.32"),
+                LocalDateTime.of(2023, 3, 7, 16, 03),
+                LocalDateTime.of(2022, 3, 7, 19, 03), providers);
+
+
+
+        busTicket.cancel();
     }
 
 }
