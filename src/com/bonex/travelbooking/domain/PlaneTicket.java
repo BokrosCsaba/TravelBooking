@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class PlaneTicket  extends TravelTicket{
 
-    private Integer travelClass;
+    private ClassesOfTravel travelClass;
     private Integer seatNumber;
     private Integer stopOvers;
 
@@ -15,7 +15,7 @@ public class PlaneTicket  extends TravelTicket{
     }
 
     public PlaneTicket(Long bookingRef, String origin, String destination, BigDecimal price,
-                       LocalDateTime departureTime, LocalDateTime arrivalTime, Integer travelClass,
+                       LocalDateTime departureTime, LocalDateTime arrivalTime, ClassesOfTravel travelClass,
                        Integer seatNumber, Integer stopOvers) {
         super(bookingRef, origin, destination, price, departureTime, arrivalTime);
         this.travelClass = travelClass;
@@ -23,11 +23,11 @@ public class PlaneTicket  extends TravelTicket{
         this.stopOvers = stopOvers;
     }
 
-    public Integer getTravelClass() {
+    public ClassesOfTravel getTravelClass() {
         return travelClass;
     }
 
-    public void setTravelClass(Integer travelClass) {
+    public void setTravelClass(ClassesOfTravel travelClass) {
         this.travelClass = travelClass;
     }
 
