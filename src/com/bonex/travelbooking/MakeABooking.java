@@ -92,7 +92,6 @@ public class MakeABooking {
 
                     trainTicket.setTravelClass(ClassesOfTravel.valueOf(travelClassTrain.toUpperCase()));
                     System.out.println(trainTicket);
-
             }
 
         }
