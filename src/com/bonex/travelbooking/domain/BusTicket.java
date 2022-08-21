@@ -64,4 +64,5 @@ public class BusTicket extends TravelTicket {
         result = 31 * result + Arrays.hashCode(permittedProviders);
         return result;
     }
+
 }
