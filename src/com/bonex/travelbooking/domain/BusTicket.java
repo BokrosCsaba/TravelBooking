@@ -47,7 +47,7 @@ public class BusTicket extends TravelTicket {
                 '}';
     }
 
-}
+
 
     @Override
     public boolean equals(Object o) {

@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class TravelTicket {
+public abstract class TravelTicket {
 
     private Long bookingRef;
     private String origin;
