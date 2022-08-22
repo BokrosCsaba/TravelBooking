@@ -16,7 +16,7 @@ public class PlaneTicket  extends TravelTicket{
 
     public PlaneTicket(Long bookingRef, String origin, String destination, BigDecimal price,
                        LocalDateTime departureTime, LocalDateTime arrivalTime, ClassesOfTravel travelClass,
-                       Integer seatNumber, Integer stopOvers) {
+                       Integer seatNumber, Integer stopOvers) throws TravelDurationException {
         super(bookingRef, origin, destination, price, departureTime, arrivalTime);
         this.travelClass = travelClass;
         this.seatNumber = seatNumber;

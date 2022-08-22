@@ -12,7 +12,7 @@ public class BusTicket extends TravelTicket {
         super();
     }
     public BusTicket(Long bookingRef, String origin, String destination, BigDecimal price,
-                     LocalDateTime departureTime, LocalDateTime arrivalTime, String[] permittedProviders) {
+                     LocalDateTime departureTime, LocalDateTime arrivalTime, String[] permittedProviders) throws TravelDurationException {
         super(bookingRef, origin, destination, price, departureTime, arrivalTime);
         this.permittedProviders = permittedProviders;
     }

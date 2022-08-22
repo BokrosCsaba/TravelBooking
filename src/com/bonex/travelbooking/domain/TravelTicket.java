@@ -2,6 +2,7 @@ package com.bonex.travelbooking.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 public abstract class TravelTicket {
@@ -15,13 +16,20 @@ public abstract class TravelTicket {
 
     public TravelTicket() {}
 
-    public TravelTicket(Long bookingRef, String origin, String destination, BigDecimal price, LocalDateTime departureTime, LocalDateTime arrivalTime) {
+    public TravelTicket(Long bookingRef, String origin, String destination, BigDecimal price, LocalDateTime departureTime, LocalDateTime arrivalTime) throws TravelDurationException {
+
         this.bookingRef = bookingRef;
         this.origin = origin;
         this.destination = destination;
         this.price = price;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
+
+        long diff = ChronoUnit.SECONDS.between(departureTime, arrivalTime);
+
+        if (diff<0) {
+            throw new TravelDurationException();
+        }
     }
 
     public Long getBookingRef() {

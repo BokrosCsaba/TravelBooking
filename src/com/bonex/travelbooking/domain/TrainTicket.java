@@ -17,7 +17,7 @@ public class TrainTicket extends TravelTicket {
 
     public TrainTicket(Long bookingRef, String origin, String destination, BigDecimal price,
                        LocalDateTime departureTime, LocalDateTime arrivalTime, ClassesOfTravel travelClass,
-                       Integer carriageNumber, Integer seatNumber) {
+                       Integer carriageNumber, Integer seatNumber) throws TravelDurationException {
         super(bookingRef, origin, destination, price, departureTime, arrivalTime);
         this.travelClass = travelClass;
         this.carriageNumber = carriageNumber;
