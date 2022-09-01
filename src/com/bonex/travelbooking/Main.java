@@ -1,9 +1,6 @@
 package com.bonex.travelbooking;
 
-import com.bonex.travelbooking.domain.BusTicket;
-import com.bonex.travelbooking.domain.ClassesOfTravel;
-import com.bonex.travelbooking.domain.TrainTicket;
-import com.bonex.travelbooking.domain.TravelDurationException;
+import com.bonex.travelbooking.domain.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -54,17 +51,20 @@ public class Main {
 
 
 
-        ArrayList<BusTicket> busTickets = new ArrayList<>();
-        busTickets.add(busTicket);
-        busTickets.add(busTicket2);
-        busTickets.add(busTicket3);
+        ArrayList<TravelTicket> tickets = new ArrayList<>();
+        tickets.add(busTicket);
+        tickets.add(busTicket2);
+        tickets.add(busTicket3);
+        tickets.add(trainTicket2);
 
-//        for (int i=0; i<busTickets.size(); i++){
-//            System.out.println(busTickets.get(i));
-//        }
-        for (BusTicket b: busTickets){
-            System.out.println(b.getBookingRef());
+
+        for (TravelTicket b: tickets){
+            System.out.println(b);
         }
+
+        TravelTicket foundTicket = tickets.get(2);
+        System.out.println(foundTicket);
+
     }
 
 }
