@@ -53,6 +53,7 @@ public class Main {
 
 
 
+
         ArrayList<BusTicket> busTickets = new ArrayList<>();
         busTickets.add(busTicket);
         busTickets.add(busTicket2);
@@ -62,7 +63,7 @@ public class Main {
 //            System.out.println(busTickets.get(i));
 //        }
         for (BusTicket b: busTickets){
-            System.out.println(b);
+            System.out.println(b.getBookingRef());
         }
     }
 
