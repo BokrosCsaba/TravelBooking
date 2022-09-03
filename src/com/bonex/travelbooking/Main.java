@@ -62,8 +62,20 @@ public class Main {
             System.out.println(b);
         }
 
-        TravelTicket foundTicket = tickets.get(2);
+        TravelTicket foundTicket = tickets.get(1);
         System.out.println(foundTicket);
+
+        if (foundTicket instanceof BusTicket){
+            System.out.println("Its a bus ticket");
+            BusTicket foundBusticket = (BusTicket) foundTicket;
+            System.out.println(foundBusticket.getPermittedProviders());
+        }
+        else if (foundTicket instanceof TrainTicket foundTrainTicket){ // Java 17 feature, egyszerre vizsgál és castol is, itt csinál egy TrainTicket tipusút
+            foundTrainTicket.getCarriageNumber();
+            System.out.println("Its a train ticket");
+        }
+        else System.out.println("Its a plane ticket");
+
 
     }
 
