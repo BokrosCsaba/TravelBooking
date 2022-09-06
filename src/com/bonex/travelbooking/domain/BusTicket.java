@@ -19,6 +19,9 @@ public class BusTicket extends TravelTicket {
         this.permittedProviders = permittedProviders;
     }
 
+    public BusTicket(TravelTicket foundTicket, ArrayList<String> providers) {
+    }
+
     public ArrayList<String> getPermittedProviders() {
         return permittedProviders;
     }

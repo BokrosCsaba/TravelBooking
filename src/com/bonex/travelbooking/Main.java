@@ -1,5 +1,7 @@
 package com.bonex.travelbooking;
 
+import com.bonex.travelbooking.bookingprocess.BookingSystem;
+import com.bonex.travelbooking.bookingprocess.EnjoyableToursBookingSystem;
 import com.bonex.travelbooking.domain.*;
 
 import java.math.BigDecimal;
@@ -46,7 +48,7 @@ public class Main {
         BusTicket busTicket3 = new BusTicket(125L, "London", "Edinburgh", new BigDecimal("54.32"),
                 LocalDateTime.of(2022, 3, 7, 16, 03),
                 LocalDateTime.of(2023, 3, 7, 19, 03), providers);
-        busTicket.cancel();
+
 
 
 
@@ -76,6 +78,11 @@ public class Main {
         }
         else System.out.println("Its a plane ticket");
 
+    BusTicket busTicket4 = new BusTicket(foundTicket, providers);
+    BookingSystem bookingSystem = new EnjoyableToursBookingSystem();
+    bookingSystem.setTravelTicket(busTicket4);
+    bookingSystem.requestBooking();
+    bookingSystem.getStatus();
 
     }
 
