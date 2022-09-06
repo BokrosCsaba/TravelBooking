@@ -6,12 +6,12 @@ public class CheapTravelBookingsystem implements BookingSystem{
 
     @Override
     public void setTravelTicket(TravelTicket ticket) {
-
+        System.out.println("Cheap travel received ticket " + ticket);
     }
 
     @Override
     public void requestBooking() {
-
+        System.out.println("Cheap travel had a booking request");
     }
 
     @Override

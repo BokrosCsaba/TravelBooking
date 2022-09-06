@@ -1,6 +1,7 @@
 package com.bonex.travelbooking;
 
 import com.bonex.travelbooking.bookingprocess.BookingSystem;
+import com.bonex.travelbooking.bookingprocess.CheapTravelBookingsystem;
 import com.bonex.travelbooking.bookingprocess.EnjoyableToursBookingSystem;
 import com.bonex.travelbooking.domain.*;
 
@@ -80,6 +81,8 @@ public class Main {
 
     BusTicket busTicket4 = new BusTicket(foundTicket, providers);
     BookingSystem bookingSystem = new EnjoyableToursBookingSystem();
+
+    // a fenti instancolásba berakhatom bármelyik classt, ami implementálja a Bookinsystem interface-t, és az alábbi kód mindegyikkel lefut
     bookingSystem.setTravelTicket(busTicket4);
     bookingSystem.requestBooking();
     bookingSystem.getStatus();
