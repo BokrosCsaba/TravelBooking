@@ -23,4 +23,5 @@ public class EnjoyableToursBookingSystem implements BookingSystem{
     public boolean cancel() {
         return false;
     }
+
 }
