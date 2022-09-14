@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class BusTicket extends TravelTicket {
+public class BusTicket extends TravelTicket implements Comparable<TravelTicket>{
 
     private ArrayList<String> permittedProviders = new ArrayList<>();
     public BusTicket() {
@@ -65,4 +65,7 @@ public class BusTicket extends TravelTicket {
     public int hashCode() {
         return Objects.hash(super.hashCode(), permittedProviders);
     }
+
+
+
 }

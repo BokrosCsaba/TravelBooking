@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
-public abstract class TravelTicket {
+public abstract class TravelTicket implements Comparable<TravelTicket>{
 
     private Long bookingRef;
     private String origin;
@@ -111,6 +111,11 @@ public abstract class TravelTicket {
     @Override
     public int hashCode() {
         return Objects.hash(bookingRef, origin, destination, price, departureTime, arrivalTime);
+    }
+
+    @Override
+    public int compareTo(TravelTicket o) {
+        return bookingRef.compareTo(o.getBookingRef());
     }
 }
 

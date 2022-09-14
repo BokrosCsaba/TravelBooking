@@ -4,10 +4,14 @@ import com.bonex.travelbooking.bookingprocess.BookingSystem;
 import com.bonex.travelbooking.bookingprocess.CheapTravelBookingsystem;
 import com.bonex.travelbooking.bookingprocess.EnjoyableToursBookingSystem;
 import com.bonex.travelbooking.domain.*;
+import com.bonex.travelbooking.utilities.OriginSortComparator;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws TravelDurationException {
@@ -54,12 +58,21 @@ public class Main {
 
 
 
-        ArrayList<TravelTicket> tickets = new ArrayList<>();
+        List<TravelTicket> tickets = new ArrayList<>();
         tickets.add(busTicket);
         tickets.add(busTicket2);
         tickets.add(busTicket3);
         tickets.add(trainTicket2);
 
+
+        //Collections.sort(tickets, new OriginSortComparator());
+
+        Collections.sort(tickets, new Comparator<TravelTicket>() {
+            @Override
+            public int compare(TravelTicket o1, TravelTicket o2) {
+                return o1.getDestination().compareTo(o2.getDestination());
+            }
+        }
 
         for (TravelTicket b: tickets){
             System.out.println(b);
@@ -79,8 +92,8 @@ public class Main {
         }
         else System.out.println("Its a plane ticket");
 
-    BusTicket busTicket4 = new BusTicket(foundTicket, providers);
-    BookingSystem bookingSystem = new EnjoyableToursBookingSystem();
+        BusTicket busTicket4 = new BusTicket(foundTicket, providers);
+        BookingSystem bookingSystem = new EnjoyableToursBookingSystem();
 
 
 

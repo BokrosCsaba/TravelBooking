@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class PlaneTicket  extends TravelTicket{
+public class PlaneTicket  extends TravelTicket implements Comparable<TravelTicket>{
 
     private ClassesOfTravel travelClass;
     private Integer seatNumber;
