@@ -72,7 +72,7 @@ public class Main {
             public int compare(TravelTicket o1, TravelTicket o2) {
                 return o1.getDestination().compareTo(o2.getDestination());
             }
-        }
+        });
 
         for (TravelTicket b: tickets){
             System.out.println(b);
