@@ -78,6 +78,13 @@ public class Main {
         Collections.sort(tickets, (a,b)->{
             return a.getPrice().compareTo(b.getPrice());
         } );
+        //streamek
+        List<TravelTicket> londonTickets = tickets.stream().filter(a-> a.getOrigin().equals("London")).toList();
+
+        List<TravelTicket> ticketProba = tickets.stream().map(a-> {
+            a.setPrice(a.getPrice().add(new BigDecimal(21)));
+            return a;
+        }).toList();
 
         for (TravelTicket b: tickets){
             System.out.println(b);
