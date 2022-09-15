@@ -64,15 +64,20 @@ public class Main {
         tickets.add(busTicket3);
         tickets.add(trainTicket2);
 
-
+        //Comparatort inplementált külön class-szal
         //Collections.sort(tickets, new OriginSortComparator());
 
+        //Anonymous inner class-szal
         Collections.sort(tickets, new Comparator<TravelTicket>() {
             @Override
             public int compare(TravelTicket o1, TravelTicket o2) {
                 return o1.getDestination().compareTo(o2.getDestination());
             }
         });
+        //ugyanaz lambda expression-nel
+        Collections.sort(tickets, (a,b)->{
+            return a.getPrice().compareTo(b.getPrice());
+        } );
 
         for (TravelTicket b: tickets){
             System.out.println(b);
